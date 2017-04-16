@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
-import * as d3 from 'd3';
-// import UserGraph from './UserGraph';
-// import logo from './logo.svg';
-// import './UserGraph.css';
+import * as d3 from 'd3'
+import React, { Component } from 'react'
 
 class UserGraph extends Component {
 
   componentDidMount() {
-    console.log(d3);
     const { vertices, edges } = this.props;
 
     userGraph(vertices, edges);
@@ -16,51 +12,17 @@ class UserGraph extends Component {
   render() {
     return (
       <div className="UserGraph">
-        <canvas width="960" height="640" />
+        <canvas width={window.innerWidth} height={0.5 * window.innerHeight} />
       </div>
     );
   }
 }
-
-UserGraph.defaultProps = {
-  vertices: [
-    { name: 'Creighton Hospital' },
-    { name: 'Heart Hospital' },
-    { name: 'Marshall Regional Medical Center' },
-    { name: 'McKennan Hospital & University Health Center' },
-    { name: 'Queen of Peace Hospital' },
-    { name: 'Sacred Heart Hospital' },
-    { name: 'St. Luke\'s Hospital' },
-    { name: 'St. Mary\'s Hospital' },
-    { name: 'Milbank Area Hospital' },
-    { name: 'Pipestone County Medical Center' },
-    { name: 'St. Michael\'s Hospital' },
-    { name: 'Wagner Community Memorial Hospital' }
-	],
-	edges: [
-    { source: 0, target: 0 },
-    { source: 1, target: 1 },
-    { source: 1, target: 7 },
-    { source: 2, target: 2 },
-    { source: 3, target: 1 },
-    { source: 3, target: 3 },
-    { source: 3, target: 9 },
-    { source: 4, target: 4 },
-    { source: 6, target: 5 },
-    { source: 6, target: 3 },
-    { source: 8, target: 8 },
-    { source: 10, target: 3 },
-    { source: 11, target: 3 },
-    { source: 11, target: 11 }
-	],
-};
 
 function userGraph(vertices, edges) {
   const canvas = document.querySelector('canvas');
   const context = canvas.getContext('2d');
   const { width, height } = canvas;
 
-  // D3 lingo
   const nodes = vertices;
   const links = edges;
 
@@ -131,9 +93,43 @@ function userGraph(vertices, edges) {
   }
 
   function drawNode(d) {
+    context.fillText(d.name, d.x, d.y);
     context.moveTo(d.x + 3, d.y);
     context.arc(d.x, d.y, 3, 0, 2 * Math.PI);
   }
 }
 
-export default UserGraph;
+UserGraph.defaultProps = {
+  vertices: [
+    { name: 'Creighton Hospital' },
+    { name: 'Heart Hospital' },
+    { name: 'Marshall Regional Medical Center' },
+    { name: 'McKennan Hospital & University Health Center' },
+    { name: 'Queen of Peace Hospital' },
+    { name: 'Sacred Heart Hospital' },
+    { name: 'St. Luke\'s Hospital' },
+    { name: 'St. Mary\'s Hospital' },
+    { name: 'Milbank Area Hospital' },
+    { name: 'Pipestone County Medical Center' },
+    { name: 'St. Michael\'s Hospital' },
+    { name: 'Wagner Community Memorial Hospital' }
+	],
+	edges: [
+    { source: 0, target: 0 },
+    { source: 1, target: 1 },
+    { source: 1, target: 7 },
+    { source: 2, target: 2 },
+    { source: 3, target: 1 },
+    { source: 3, target: 3 },
+    { source: 3, target: 9 },
+    { source: 4, target: 4 },
+    { source: 6, target: 5 },
+    { source: 6, target: 3 },
+    { source: 8, target: 8 },
+    { source: 10, target: 3 },
+    { source: 11, target: 3 },
+    { source: 11, target: 11 }
+	],
+};
+
+export default UserGraph
