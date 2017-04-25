@@ -27,6 +27,12 @@
   rdfs:range xsd:string ;
   rdfs:seeAlso schema:familyName .
 
+:intro
+  a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "Introduction"@en ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string .
+
 :email
   a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "Email"@en ;
