@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "./node_modules/.bin/nodemon --watch . --watch ../../ontology -e js,json,ttl index.js"
+    "dev": "./node_modules/.bin/nodemon --watch . --watch ../../ontology -e js,json,ttl index.js",
+    "build": "node scripts/buildSchema.js"
   },
   "author": "",
   "license": "ISC",

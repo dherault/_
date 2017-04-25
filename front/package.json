@@ -1,5 +1,5 @@
 {
-  "name": "graphql-service",
+  "name": "front",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
@@ -27,7 +27,6 @@
     "eject": "react-scripts eject"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "handler.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dherault/_.git"
