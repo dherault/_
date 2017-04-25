@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "babel-plugin-relay": "dev",
+    "react-scripts": "0.9.5",
+    "relay-compiler": "dev"
   },
   "dependencies": {
     "d3": "^4.8.0",
@@ -11,6 +13,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
+    "react-relay": "dev",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",
