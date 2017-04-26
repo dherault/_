@@ -1,18 +1,24 @@
 import './User.css'
 import React, { Component } from 'react'
+import { createFragmentContainer, graphql } from 'react-relay'
 
 import UserGraph from './UserGraph'
 
 class User extends Component {
   render() {
+    const { user } = this.props;
+
+    if (!user) return console.log('no User props') || null;
+
     return (
       <div className="User">
-        <img className="User-picture" alt="" src={'_'} />
+        <h1>User</h1>
+        <img className="User-picture" alt="" src={user.pictureUrl} />
 
-        <h1>{'_'}</h1>
+        <h1>{user.fisrtName} {user.lastName}</h1>
 
         <p className="User-intro">
-          {'_'}
+          {user.intro}
         </p>
 
         <UserGraph />
@@ -20,5 +26,14 @@ class User extends Component {
     );
   }
 }
+
+module.exports = createFragmentContainer(User, graphql`
+  fragment User_user on Person {
+    firstName
+    lastName
+    intro
+    pictureUrl
+  }
+`);
 
 export default User
