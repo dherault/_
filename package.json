@@ -1,0 +1,22 @@
+{
+  "name": "monorepo_",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-front": "(cd front && npm start)",
+    "dev-graphql": "(cd services/graphql && npm run dev)",
+    "dev": "npm run dev-front & npm run dev-graphql",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherault/_.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dherault/_/issues"
+  },
+  "homepage": "https://github.com/dherault/_#readme"
+}

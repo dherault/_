@@ -1,11 +1,23 @@
 {
-  "name": "front",
+  "name": "front_",
   "version": "0.0.0",
   "private": true,
-  "devDependencies": {
-    "babel-plugin-relay": "dev",
-    "react-scripts": "0.9.5",
-    "relay-compiler": "dev"
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherault/_.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dherault/_/issues"
+  },
+  "homepage": "https://github.com/dherault/_#readme",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "d3": "^4.8.0",
@@ -20,21 +32,9 @@
     "redux": "^3.6.0",
     "redux-offline": "^2.0.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dherault/_.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dherault/_/issues"
-  },
-  "homepage": "https://github.com/dherault/_#readme"
+  "devDependencies": {
+    "babel-plugin-relay": "dev",
+    "react-scripts": "0.9.5",
+    "relay-compiler": "dev"
+  }
 }
