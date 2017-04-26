@@ -1,4 +1,5 @@
-dist/*.json
+dist/**
+!dist/.gitkeep
 
 # Serverless directories
 .serverless

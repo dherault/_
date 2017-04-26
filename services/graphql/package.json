@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "./node_modules/.bin/nodemon --watch . --watch ../../ontology -e js,json,ttl index.js",
-    "build": "node scripts/buildSchema.js"
+    "dev-build": "./node_modules/.bin/nodemon --watch ../../ontology -e ttl scripts/printSchema.js",
+    "build": "node scripts/printSchema.js"
   },
   "author": "",
   "license": "ISC",
