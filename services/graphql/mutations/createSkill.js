@@ -3,7 +3,6 @@ const { mutationWithClientMutationId } = require('graphql-relay');
 const data = require('../data');
 const _ = require('../graph');
 
-
 module.exports = mutationWithClientMutationId({
   name: 'createSkill',
   inputFields: {
@@ -21,6 +20,7 @@ module.exports = mutationWithClientMutationId({
     const skill = {
       label,
       type: 'Skill',
+      id: Math.random(),
     };
 
     data.push(skill);

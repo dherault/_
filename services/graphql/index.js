@@ -16,7 +16,7 @@ const server = express()
   if (req.body && req.body.query) {
     console.log('\n__________\nNew query:\n', req.body.query);
 
-    if (req.body.variables) {
+    if (req.body.variables && Object.keys(req.body.variables).length) {
       console.log('\nVariables:\n', JSON.stringify(req.body.variables, null, 2));
     }
   }

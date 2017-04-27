@@ -8,7 +8,7 @@ class User extends Component {
   render() {
     const { user } = this.props;
 
-    if (!user) return console.log('no User props') ||null;
+    if (!user) return console.log('no User props') || null;
 
     return (
       <div className="User">

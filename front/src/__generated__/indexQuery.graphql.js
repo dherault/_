@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule indexQuery.graphql
- * @generated SignedSource<<b84cc0186f137e3a8d44464777eb09fc>>
- * @relayHash bc7813026a504d044ce062bf2ecda3f5
+ * @generated SignedSource<<7dff7cddb0ec9416a22aa2deedaa03b3>>
+ * @relayHash a152cbaad5aefa9a2650969e75aeb8f3
  * @flow
  * @nogrep
  */
@@ -24,6 +24,10 @@ query indexQuery {
     ...User_user
     id
   }
+  skills {
+    ...Skills_skills
+    id
+  }
 }
 
 fragment User_user on Person {
@@ -31,6 +35,11 @@ fragment User_user on Person {
   lastName
   intro
   pictureUrl
+}
+
+fragment Skills_skills on Skill {
+  id
+  label
 }
 */
 
@@ -52,6 +61,22 @@ const batch /*: ConcreteBatch*/ = {
           {
             "kind": "FragmentSpread",
             "name": "User_user",
+            "args": null
+          }
+        ],
+        "storageKey": null
+      },
+      {
+        "kind": "LinkedField",
+        "alias": null,
+        "args": null,
+        "concreteType": "Skill",
+        "name": "skills",
+        "plural": true,
+        "selections": [
+          {
+            "kind": "FragmentSpread",
+            "name": "Skills_skills",
             "args": null
           }
         ],
@@ -115,10 +140,41 @@ const batch /*: ConcreteBatch*/ = {
           }
         ],
         "storageKey": null
+      },
+      {
+        "kind": "LinkedField",
+        "alias": null,
+        "args": null,
+        "concreteType": "Skill",
+        "name": "skills",
+        "plural": true,
+        "selections": [
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "id",
+            "storageKey": null
+          },
+          {
+            "kind": "InlineFragment",
+            "type": "Skill",
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "label",
+                "storageKey": null
+              }
+            ]
+          }
+        ],
+        "storageKey": null
       }
     ]
   },
-  "text": "query indexQuery {\n  user {\n    ...User_user\n    id\n  }\n}\n\nfragment User_user on Person {\n  firstName\n  lastName\n  intro\n  pictureUrl\n}\n"
+  "text": "query indexQuery {\n  user {\n    ...User_user\n    id\n  }\n  skills {\n    ...Skills_skills\n    id\n  }\n}\n\nfragment User_user on Person {\n  firstName\n  lastName\n  intro\n  pictureUrl\n}\n\nfragment Skills_skills on Skill {\n  id\n  label\n}\n"
 };
 
 module.exports = batch;
