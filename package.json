@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-front": "(cd front && npm start)",
+    "dev-front": "(cd front && npm run dev)",
     "dev-graphql": "(cd services/graphql && npm run dev)",
-    "dev": "npm run dev-front & npm run dev-graphql",
+    "dev-schema": "(cd services/graphql && npm run dev-build)",
+    "dev": "npm run dev-schema & npm run dev-graphql & npm run dev-front",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

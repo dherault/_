@@ -9,3 +9,5 @@ const out = path.join(__dirname, '../../../dist/schema.graphql');
 
 // Save user readable type system shorthand of schema
 fs.writeFileSync(out, printSchema(schema));
+
+console.log('GraphQL schema saved on disk.');

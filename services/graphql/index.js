@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const schema = require('./schema');
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
-express()
+const server = express()
 .use(cors())
 .use(bodyParser.urlencoded({ extended: false }))
 .use(bodyParser.json())
@@ -24,10 +24,6 @@ express()
     console.log('body:', req.body);
   }
 
-  /* Add headers */
-
-
-
   /* Fetch user data */
 
   graphqlHTTP({
@@ -40,3 +36,9 @@ express()
   })(req, res);
 })
 .listen(3001, err => console.log(err || 'GraphQL endpoint listening on port 3001\n'));
+
+process.on('SIGINT', () => {
+  console.log('Terminating GraphQL service.');
+  server.close();
+  process.exit();
+});
