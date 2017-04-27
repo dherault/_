@@ -19,9 +19,11 @@ const renderApp = ({ error, props }) => {
     <div>
       <h1>App</h1>
 
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+
       {!!error && <pre>{JSON.stringify(error, null, 2)}</pre>}
 
-      <Route exact path="/" render={p => <User {...p} {...data} />} />
+      <Route exact path="/" render={p => <User {...p} user={data.user} />} />
     </div>
   )
 }
